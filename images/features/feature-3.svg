@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Canli Anketler Ornek Gorsel">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f6bb8"/>
+      <stop offset="100%" stop-color="#163f6d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g fill="#ffffff" fill-opacity="0.9">
+    <rect x="170" y="120" width="860" height="84" rx="18" fill-opacity="0.15"/>
+    <rect x="200" y="154" width="420" height="18" rx="9"/>
+    <rect x="170" y="250" width="180" height="280" rx="16"/>
+    <rect x="390" y="300" width="180" height="230" rx="16" fill-opacity="0.85"/>
+    <rect x="610" y="210" width="180" height="320" rx="16" fill-opacity="0.75"/>
+    <rect x="830" y="350" width="180" height="180" rx="16" fill-opacity="0.65"/>
+  </g>
+</svg>

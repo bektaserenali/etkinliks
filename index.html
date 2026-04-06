@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventsApp - Etkinliklerinizi Dijitalleştirin</title>
+    <meta name="description" content="EventsApp ile etkinlikleriniz için özel mobil uygulama oluşturun. Katılımcı deneyimini geliştirin, networking'i kolaylaştırın, etkinlik verilerinizi analiz edin.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="logo"><img style="max-height: 50px;" src="images/logo_uzun.png"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="ozellikler.html">Özellikler</a></li>
+            <li><a href="mobilapp.html">Mobil App</a></li>
+            <li><a href="avantajlar.html">Avantajlar</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="demoiste.html" class="cta-button">Demo İste</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-carousel" id="heroCarousel">
+            <button class="hero-nav hero-prev" type="button" aria-label="Önceki slayt">&#10094;</button>
+            <div class="hero-track">
+                <article class="hero-slide">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1><span style="color:#207acd">Etkinliklerinizi</span> <span class="gradient-text">Dijitalleştirin</span></h1>
+                            <p>Konferanslar, kongre, fuar ve toplantılarınız için özelleştirilmiş mobil uygulamalar. Katılımcı deneyimini yükseltin, networking'i kolaylaştırın.</p>
+                            <div class="hero-buttons">
+                                <a href="demoiste.html" class="btn-primary">Ücretsiz Demo</a>
+                                <a href="ozellikler.html" class="btn-secondary">Özellikleri Keşfet</a>
+                            </div>
+                            <div class="stats">
+                                <div class="stat">
+                                    <span class="stat-number">500+</span>
+                                    <span class="stat-label">Başarılı Etkinlik</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">50K+</span>
+                                    <span class="stat-label">Aktif Kullanıcı</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">98%</span>
+                                    <span class="stat-label">Memnuniyet</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-phone">
+                            <div class="phone-mockup">
+                                <img src="images/telefon3.png" alt="EventsApp mobil uygulama">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="hero-slide">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1><span style="color:#207acd">Katılımcı</span> <span class="gradient-text">Etkileşimini Artırın</span></h1>
+                            <p>Canlı anket, soru-cevap, push bildirim ve sosyal duvar özellikleriyle etkinlik anını daha dinamik ve ölçülebilir hale getirin.</p>
+                            <div class="hero-buttons">
+                                <a href="mobilapp.html" class="btn-primary">Mobil Deneyimi İncele</a>
+                                <a href="avantajlar.html" class="btn-secondary">Avantajları Gör</a>
+                            </div>
+                            <div class="stats">
+                                <div class="stat">
+                                    <span class="stat-number">3x</span>
+                                    <span class="stat-label">Daha Fazla Etkileşim</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">%80</span>
+                                    <span class="stat-label">Daha Az Basılı İçerik</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">24s</span>
+                                    <span class="stat-label">Hızlı Kurulum</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-phone">
+                            <div class="phone-mockup">
+                                <img src="images/telefon3.png" alt="EventsApp etkileşim ekranı">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="hero-slide">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1><span style="color:#207acd">Veriye Dayalı</span> <span class="gradient-text">Etkinlik Yönetimi</span></h1>
+                            <p>Katılım verileri, popüler oturumlar ve sponsor görünürlüğünü tek panelden izleyin. Sonraki etkinliklerinizi daha güçlü planlayın.</p>
+                            <div class="hero-buttons">
+                                <a href="demoiste.html" class="btn-primary">Canlı Demo Planla</a>
+                                <a href="iletisim.html" class="btn-secondary">Bizimle İletişime Geç</a>
+                            </div>
+                            <div class="stats">
+                                <div class="stat">
+                                    <span class="stat-number">%100</span>
+                                    <span class="stat-label">Anlık Raporlama</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">ROI</span>
+                                    <span class="stat-label">Sponsor Ölçümleme</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">7/24</span>
+                                    <span class="stat-label">Uzman Destek</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-phone">
+                            <div class="phone-mockup">
+                                <img src="images/telefon3.png" alt="EventsApp analitik ekranı">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <button class="hero-nav hero-next" type="button" aria-label="Sonraki slayt">&#10095;</button>
+            <div class="hero-dots" aria-label="Hero slaytları">
+                <button class="hero-dot active" type="button" aria-label="1. slayta git"></button>
+                <button class="hero-dot" type="button" aria-label="2. slayta git"></button>
+                <button class="hero-dot" type="button" aria-label="3. slayta git"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <span class="section-tag">Özellikler</span>
+            <h2>Her Şey Tek Uygulamada</h2>
+            <p>Etkinlik yönetiminden katılımcı etkileşimine, networking'den analizlere kadar ihtiyacınız olan her şey</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card fade-in-up delay-1">
+                <div class="feature-visual"><img src="images/etkinlik-yönetimi.jpg" alt="Etkinlik yonetimi"></div>
+                <h3>Etkinlik Programı</h3>
+                <p>Detaylı oturum programları, konuşmacı bilgileri ve etkileşimli zaman çizelgesi. Katılımcılar kendi ajandalarını oluşturabilir.</p>
+            </div>
+            <div class="feature-card fade-in-up delay-2">
+                <div class="feature-visual"><img src="images/qr_hizli.png" alt="Etkinlik yonetimi"></div>
+                <h3>Akıllı Networking</h3>
+                <p>QR kod ile hızlı kartvizit paylaşımı, AI destekli eşleştirme ve bir-bir görüşme planlama özellikleri.</p>
+            </div>
+            <div class="feature-card fade-in-up delay-3">
+                <div class="feature-visual"><img src="images/DinamikAnket.png" alt="Etkinlik yonetimi"></div>
+                <h3>Dinamik Anketler</h3>
+                <p>İstediğiniz bilgileri toplayın ve anlık bilgi alın.</p>
+            </div>
+            <div class="feature-card fade-in-up delay-4">
+                <div class="feature-visual"><img src="images/InteraktifHarita.png" alt="Etkinlik yonetimi"></div>
+                <h3>Interaktif Haritalar</h3>
+                <p>Detaylı mekan planları, stand konumları ve navigasyon desteği. Katılımcılar kaybolmaz.</p>
+            </div>
+            <div class="feature-card fade-in-up delay-5">
+                <div class="feature-visual"><img src="images/SosyalDuvar.png" alt="Etkinlik yonetimi"></div>
+                <h3>Sosyal Duvar</h3>
+                <p>Etkinlik içi sosyal medya entegrasyonu, canlı paylaşımlar ve katılımcı etkileşimi.</p>
+            </div>
+            <div class="feature-card fade-in-up delay-6">
+                <div class="feature-visual"><img src="images/DetayliAnalitik.png" alt="Etkinlik yonetimi"></div>
+                <h3>Detaylı Analitik</h3>
+                <p>Katılımcı davranışları, popüler oturumlar ve ROI raporları. Veriye dayalı kararlar alın.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Features -->
+    <section class="mobile-features" id="mobile">
+        <div class="mobile-content">
+            <div>
+                <div class="section-header">
+                    <span class="section-tag">Mobil Uygulama</span>
+                    <h2>iOS ve Android'de Mükemmel Deneyim</h2>
+                    <p>Native mobil uygulama ile katılımcılarınız her zaman bağlı kalır. Offline erişim, push bildirimler ve sezgisel arayüz.</p>
+                </div>
+                <ul class="feature-list">
+                    <li>Kişiselleştirilmiş program ve hatırlatmalar</li>
+                    <li>QR kod ile hızlı check-in</li>
+                    <li>Offline erişim - internet olmadan çalışır</li>
+                    <li>Push bildirimler - önemli duyuruları kaçırmayın</li>
+                    <li>Dijital kartvizit değişimi</li>
+                    <li>Canlı soru-cevap ve anketler</li>
+                    <li>Sponsorluk ve sergi alanı bilgileri</li>
+                    <li>Etkinlik sonrası erişim ve materyaller</li>
+                </ul>
+            </div>
+            <div class="mobile-screens">
+                <div class="screen-card delay-1">
+                    <div class="screen-preview">📱</div>
+                    <h4>Ana Sayfa</h4>
+                </div>
+                <div class="screen-card delay-2">
+                    <div class="screen-preview">📅</div>
+                    <h4>Program</h4>
+                </div>
+                <div class="screen-card delay-3">
+                    <div class="screen-preview">👥</div>
+                    <h4>Networking</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="section-header">
+            <span class="section-tag">Avantajlar</span>
+            <h2>Neden EventsApp?</h2>
+            <p>Etkinliklerinizi bir üst seviyeye taşıyın</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <span class="benefit-icon">⚡</span>
+                <h3>Hızlı Kurulum</h3>
+                <p>Etkinlik bilgilerinizi yükleyin, uygulamanız 24 saat içinde hazır</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">💰</span>
+                <h3>Maliyet Tasarrufu</h3>
+                <p>Basılı materyal maliyetlerini %80'e kadar azaltın, çevre dostu olun</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">📊</span>
+                <h3>Değerli İçgörüler</h3>
+                <p>Katılımcı davranışlarını analiz edin, gelecek etkinlikleri iyileştirin</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">🎯</span>
+                <h3>Hedefli İletişim</h3>
+                <p>Segmentlere özel bildirimler ve mesajlar gönderin</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">🤝</span>
+                <h3>Artırılmış Networking</h3>
+                <p>Katılımcılar arası bağlantıları %300 artırın</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">🌍</span>
+                <h3>Küresel Erişim</h3>
+                <p>Hibrit etkinlikler için video streaming ve uzaktan katılım</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">🔒</span>
+                <h3>Güvenli Veri</h3>
+                <p>GDPR uyumlu, banka seviyesi şifreleme ile veri güvenliği</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">🎨</span>
+                <h3>Özelleştirilebilir</h3>
+                <p>Markanıza özel tasarım, renkler ve logolar</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">📞</span>
+                <h3>7/24 Destek</h3>
+                <p>Türkçe teknik destek ekibimiz her zaman yanınızda</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="demo">
+        <div class="cta-content">
+            <h2>Etkinliğinizi Dönüştürmeye Hazır mısınız?</h2>
+            <p>Ücretsiz demo talebinde bulunun, size özel bir sunum hazırlayalım. Sorularınızı yanıtlayalım ve ihtiyaçlarınıza en uygun çözümü birlikte bulalım.</p>
+            <a href="demoiste.html" class="btn-white">Hemen Demo İsteyin</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/logo_uzun.png" alt="Etkinliks Logo" style="max-width: 200px;">
+                <p>Mobil uygulamalı, web tabanlı etkinlik yönetim platformu. Konferans, kongre, fuar ve toplantılarınız için profesyonel çözümler.</p>
+                <p style="opacity: 0.5; font-size: 0.9rem;">Powered by Millennium Software</p>
+            </div>
+            <div>
+                <h4>Çözümler</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Konferanslar</a></li>
+                    <li><a href="#">Kongre & Sempozyum</a></li>
+                    <li><a href="#">Fuarlar</a></li>
+                    <li><a href="#">Toplantılar</a></li>
+                    <li><a href="#">Festivaller</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Şirket</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Hakkımızda</a></li>
+                    <li><a href="#">Referanslar</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Kariyer</a></li>
+                    <li><a href="#">Katalog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>İletişim</h4>
+                <ul class="contact-info">
+                    <li>İstanbul Üniversitesi Avcılar Kampüsü</li>
+                    <li>Teknokent K:3 No:304</li>
+                    <li>Avcılar / İSTANBUL</li>
+                    <li><br></li>
+                    <li>📞 0 212 691 63 01</li>
+                    <li>📞 0 212 691 63 02</li>
+                    <li>📧 info@etkinliks.app</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EventsApp. Tüm hakları saklıdır. | Gizlilik Politikası | Kullanım Koşulları</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Hero carousel
+        const heroCarousel = document.getElementById('heroCarousel');
+        if (heroCarousel) {
+            const heroTrack = heroCarousel.querySelector('.hero-track');
+            const heroSlides = Array.from(heroCarousel.querySelectorAll('.hero-slide'));
+            const heroDots = Array.from(heroCarousel.querySelectorAll('.hero-dot'));
+            const prevBtn = heroCarousel.querySelector('.hero-prev');
+            const nextBtn = heroCarousel.querySelector('.hero-next');
+
+            // Append a clone of the first slide for seamless forward looping.
+            const firstClone = heroSlides[0].cloneNode(true);
+            firstClone.setAttribute('aria-hidden', 'true');
+            heroTrack.appendChild(firstClone);
+
+            const slideCount = heroSlides.length;
+            let currentSlide = 0;
+            let isTransitioning = false;
+
+            const setTrackPosition = (index, withTransition = true) => {
+                heroTrack.style.transition = withTransition ? 'transform 0.55s ease' : 'none';
+                heroTrack.style.transform = `translateX(-${index * 100}%)`;
+            };
+
+            const updateDots = (index) => {
+                const realIndex = ((index % slideCount) + slideCount) % slideCount;
+                heroDots.forEach((dot, dotIndex) => {
+                    dot.classList.toggle('active', dotIndex === realIndex);
+                });
+            };
+
+            const goToSlide = (index) => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentSlide = index;
+                setTrackPosition(currentSlide, true);
+                updateDots(currentSlide);
+            };
+
+            heroTrack.addEventListener('transitionend', () => {
+                if (currentSlide === slideCount) {
+                    // After moving to cloned first slide, jump silently to real first.
+                    currentSlide = 0;
+                    setTrackPosition(currentSlide, false);
+                }
+
+                if (currentSlide < 0) {
+                    currentSlide = slideCount - 1;
+                    setTrackPosition(currentSlide, false);
+                    updateDots(currentSlide);
+                }
+
+                isTransitioning = false;
+            });
+
+            prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+            nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+            heroDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => goToSlide(index));
+            });
+
+            setTrackPosition(0, false);
+        }
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

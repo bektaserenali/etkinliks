@@ -1,0 +1,44 @@
+
+<IfModule mod_geoip.c>
+RewriteEngine on
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} !^(TR)$
+#RewriteRule (wp-login|xmlrpc|wp-trackback\.php|admin-ajax).php$ - [F,L]
+#RewriteRule . /index.php - [F,L]
+#RewriteRule ^index\.php$ - [F,L]
+#RewriteRule . / - [F,L]
+RewriteRule ^(.*)$ - [F,L]
+</IfModule>
+
+
+<IfModule mod_geoip.c>
+RewriteEngine on
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} !^(TR)$
+#RewriteRule (wp-login|xmlrpc|wp-trackback\.php|admin-ajax).php$ - [F,L]
+#RewriteRule . /index.php - [F,L]
+#RewriteRule ^index\.php$ - [F,L]
+#RewriteRule . / - [F,L]
+RewriteRule ^(.*)$ - [F,L]
+</IfModule>
+
+
+<IfModule mod_geoip.c>
+RewriteEngine on
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} !^(TR)$
+#RewriteRule (wp-login|xmlrpc|wp-trackback\.php|admin-ajax).php$ - [F,L]
+#RewriteRule . /index.php - [F,L]
+#RewriteRule ^index\.php$ - [F,L]
+#RewriteRule . / - [F,L]
+RewriteRule ^(.*)$ - [F,L]
+</IfModule>
+
+
+<IfModule mod_geoip.c>
+RewriteEngine on
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} !^(TR)$
+#RewriteRule (wp-login|xmlrpc|wp-trackback\.php|admin-ajax).php$ - [F,L]
+#RewriteRule . /index.php - [F,L]
+#RewriteRule ^index\.php$ - [F,L]
+#RewriteRule . / - [F,L]
+RewriteRule ^(.*)$ - [F,L]
+</IfModule>
+

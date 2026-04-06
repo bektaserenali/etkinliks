@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EventsApp - İletişim</title>
+	<meta name="description" content="EventsApp iletişim sayfası. Satış, teknik destek ve iş birliği talepleriniz için bize ulaşın.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-iletisim">
+	<nav class="nav">
+		<div class="logo"><a href="index.html"><img style="max-height: 50px;" src="images/logo_uzun.png" alt="EventsApp Logo"></a></div>
+		<ul class="nav-links">
+			<li><a href="index.html">Ana Sayfa</a></li>
+			<li><a href="ozellikler.html">Özellikler</a></li>
+			<li><a href="mobilapp.html">Mobil App</a></li>
+			<li><a href="avantajlar.html">Avantajlar</a></li>
+			<li><a href="iletisim.html">İletişim</a></li>
+			<li><a href="demoiste.html" class="cta-button">Demo İste</a></li>
+		</ul>
+	</nav>
+
+	<section class="hero">
+		<div class="hero-content">
+			<div class="hero-text">
+				<h1><span style="color:#207acd">Bize</span> <span class="gradient-text">Ulaşın</span></h1>
+				<p>Satış, teknik destek veya iş birliği talepleriniz için ekibimizle iletişime geçin. İhtiyacınıza en uygun çözüme birlikte karar verelim.</p>
+				<div class="hero-buttons">
+					<a href="#contact-form" class="btn-primary">Mesaj Bırakın</a>
+					<a href="demoiste.html" class="btn-secondary">Demo Talep Et</a>
+				</div>
+			</div>
+			<div class="hero-phone">
+				<div class="phone-mockup">
+					<img src="images/telefon3.png" alt="EventsApp iletişim">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="contact-section" id="contact-form">
+		<div class="contact-grid">
+			<div class="contact-card">
+				<h3>Ofis ve İletişim Bilgileri</h3>
+				<p>Hafta içi 09:00 - 18:00 saatleri arasında satış ve destek ekiplerimize ulaşabilirsiniz.</p>
+				<ul class="contact-list">
+					<li>Adres: İstanbul Üniversitesi Avcılar Kampüsü, Teknokent K:3 No:304</li>
+					<li>Telefon: 0 212 691 63 01</li>
+					<li>Telefon: 0 212 691 63 02</li>
+					<li>E-posta: info@etkinliks.app</li>
+					<li>Destek: support@etkinliks.app</li>
+				</ul>
+				<div class="map-box">Konum Önizleme Alanı</div>
+			</div>
+			<form class="contact-form">
+				<h3>İletişim Formu</h3>
+				<div class="field-group">
+					<label for="fullName">Ad Soyad</label>
+					<input id="fullName" name="fullName" type="text" placeholder="Ad Soyad" required>
+				</div>
+				<div class="field-group">
+					<label for="email">E-posta</label>
+					<input id="email" name="email" type="email" placeholder="ornek@kurum.com" required>
+				</div>
+				<div class="field-group">
+					<label for="subject">Konu</label>
+					<input id="subject" name="subject" type="text" placeholder="Konu başlığı" required>
+				</div>
+				<div class="field-group">
+					<label for="message">Mesaj</label>
+					<textarea id="message" name="message" rows="6" placeholder="Talebinizi detaylı olarak yazabilirsiniz..." required></textarea>
+				</div>
+				<button type="submit" class="btn-primary" style="width: 100%;">Mesajı Gönder</button>
+			</form>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="footer-content">
+			<div class="footer-brand">
+				<img src="images/logo_uzun.png" alt="EventsApp Logo" style="max-width: 200px;">
+				<p>Mobil uygulamalı, web tabanlı etkinlik yönetim platformu. Konferans, kongre, fuar ve toplantılarınız için profesyonel çözümler.</p>
+			</div>
+			<div>
+				<h4>Sayfalar</h4>
+				<ul class="footer-links">
+					<li><a href="index.html">Ana Sayfa</a></li>
+					<li><a href="ozellikler.html">Özellikler</a></li>
+					<li><a href="mobilapp.html">Mobil App</a></li>
+				</ul>
+			</div>
+			<div>
+				<h4>Kurumsal</h4>
+				<ul class="footer-links">
+					<li><a href="avantajlar.html">Avantajlar</a></li>
+					<li><a href="demoiste.html">Demo İste</a></li>
+					<li><a href="iletisim.html">İletişim</a></li>
+				</ul>
+			</div>
+			<div>
+				<h4>İletişim</h4>
+				<ul class="contact-info">
+					<li>İstanbul Üniversitesi Avcılar Kampüsü</li>
+					<li>Teknokent K:3 No:304</li>
+					<li>Avcılar / İstanbul</li>
+					<li>0 212 691 63 01</li>
+					<li>info@etkinliks.app</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<p>&copy; 2026 EventsApp. Tüm hakları saklıdır.</p>
+		</div>
+	</footer>
+
+	<script>
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
+				const target = document.querySelector(this.getAttribute('href'));
+				if (target) {
+					target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}
+			});
+		});
+
+		window.addEventListener('scroll', () => {
+			const nav = document.querySelector('.nav');
+			if (window.scrollY > 50) {
+				nav.classList.add('scrolled');
+			} else {
+				nav.classList.remove('scrolled');
+			}
+		});
+	</script>
+</body>
+</html>
