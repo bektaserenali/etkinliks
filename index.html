@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
@@ -29,6 +29,37 @@
         <div class="hero-carousel" id="heroCarousel">
             <button class="hero-nav hero-prev" type="button" aria-label="Önceki slayt">&#10094;</button>
             <div class="hero-track">
+                <article class="hero-slide">
+                    <div class="hero-content">
+                        <div class="hero-text-2">
+                            <h1><span style="color:#207acd">5 Adımda Kodlama Gerektirmeden</span> <span class="gradient-text">Mobil Uygulamanızı Oluşturun</span></h1>
+                            <p>Konferanslar, kongre, fuar ve toplantılarınız için <span style="font-weight: bold;">özelleştirilmiş</span> bir kaç saatte oluşturabileceğiniz etkinliğinize yönelik mobil uygulamalar.</p>
+                            <div class="hero-buttons">
+                                <a href="demoiste.html" class="btn-primary">Ücretsiz Demo</a>
+                                <a href="ozellikler.html" class="btn-secondary">Özellikleri Keşfet</a>
+                            </div>
+                            <div class="stats">
+                                <div class="stat">
+                                    <span class="stat-number">500+</span>
+                                    <span class="stat-label">Başarılı Etkinlik</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">50K+</span>
+                                    <span class="stat-label">Aktif Kullanıcı</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">98%</span>
+                                    <span class="stat-label">Memnuniyet</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-phone">
+                            <div class="phone-mockup">
+                                <img src="images/telefon3.png" alt="EventsApp mobil uygulama">
+                            </div>
+                        </div>
+                    </div>
+                </article>
                 <article class="hero-slide">
                     <div class="hero-content">
                         <div class="hero-text">
@@ -128,6 +159,117 @@
                 <button class="hero-dot active" type="button" aria-label="1. slayta git"></button>
                 <button class="hero-dot" type="button" aria-label="2. slayta git"></button>
                 <button class="hero-dot" type="button" aria-label="3. slayta git"></button>
+                <button class="hero-dot" type="button" aria-label="4. slayta git"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps" id="steps">
+        <div class="steps-inner">
+            <div class="section-header">
+                <span class="section-tag">Adım Adım</span>
+                <h2>Etkinliğinizi 5 Adımda Hızla Yayına Alın</h2>
+                <p>Yukarıdaki adımlardan birine tıklayın; seçilen adıma ait proje detayı, gerekli alanlar ve çıktı planı aşağıda görünsün.</p>
+            </div>
+
+            <div class="steps-flow" role="tablist" aria-label="Etkinlik adımları">
+                <button class="step-node active" type="button" role="tab" aria-selected="true" aria-controls="step-panel-1" id="step-tab-1" data-step-target="1">1</button>
+                <div class="step-connector" aria-hidden="true"></div>
+                <button class="step-node" type="button" role="tab" aria-selected="false" aria-controls="step-panel-2" id="step-tab-2" data-step-target="2">2</button>
+                <div class="step-connector" aria-hidden="true"></div>
+                <button class="step-node" type="button" role="tab" aria-selected="false" aria-controls="step-panel-3" id="step-tab-3" data-step-target="3">3</button>
+                <div class="step-connector" aria-hidden="true"></div>
+                <button class="step-node" type="button" role="tab" aria-selected="false" aria-controls="step-panel-4" id="step-tab-4" data-step-target="4">4</button>
+                <div class="step-connector" aria-hidden="true"></div>
+                <button class="step-node" type="button" role="tab" aria-selected="false" aria-controls="step-panel-5" id="step-tab-5" data-step-target="5">5</button>
+            </div>
+
+            <div class="steps-panels">
+                <article class="step-panel active" id="step-panel-1" role="tabpanel" aria-labelledby="step-tab-1" data-step-panel="1">
+                    <div class="step-panel-text">
+                        <p class="step-panel-kicker">Adım 1</p>
+                        <h3>Etkinlik Tipi ve Şablon Seçimi</h3>
+                        <p>Etkinlik sahibi mobil uygulamanın hangi etkinlik türü için oluşturulacağını seçer, sonra uygun bir şablon belirler.</p>
+                        <ul>
+                            <li>Etkinlik tipleri: Kongre-Konferans, Fuar, Festival-Spor</li>
+                            <li>Her tip için en az 2 şablon seçeneği sunulur</li>
+                            <li>Şablon seçiminden sonra kullanıcı 2. adıma geçer</li>
+                            <li>Hedef: zamanla onlarca şablonla kataloğu genişletmek</li>
+                        </ul>
+                    </div>
+                    <div class="step-panel-media">
+                        <img src="images/etkinlik-yönetimi.jpg" alt="Planlama aşaması">
+                    </div>
+                </article>
+
+                <article class="step-panel" id="step-panel-2" role="tabpanel" aria-labelledby="step-tab-2" data-step-panel="2" hidden>
+                    <div class="step-panel-text">
+                        <p class="step-panel-kicker">Adım 2</p>
+                        <h3>Etkinliğin Genel Bilgileri</h3>
+                        <p>Bu adımda etkinliğe ait temel bilgiler, medya dosyaları, adres ve katılımcı kayıt alanları toplanır.</p>
+                        <ul>
+                            <li>Etkinlik adı, açıklama, başlangıç-bitiş tarihi, time zone</li>
+                            <li>Logo, afiş, adres ve harita gösterimi</li>
+                            <li>Dil seçimi, beklenen-gerçekleşen katılımcı sayıları</li>
+                            <li>Public/Private seçimi ve private için ziyaretçi listesi</li>
+                            <li>Kayıt formu alanları: isim, yaş, cinsiyet, e-posta, telefon, eğitim, meslek, şehir, ülke, kurum</li>
+                        </ul>
+                    </div>
+                    <div class="step-panel-media">
+                        <img src="images/SosyalDuvar.png" alt="Tasarım aşaması">
+                    </div>
+                </article>
+
+                <article class="step-panel" id="step-panel-3" role="tabpanel" aria-labelledby="step-tab-3" data-step-panel="3" hidden>
+                    <div class="step-panel-text">
+                        <p class="step-panel-kicker">Adım 3</p>
+                        <h3>Ana Sayfa ve Menü Wizard</h3>
+                        <p>Kullanıcı, mobil uygulamada yer alacak sayfaları seçer; menüdeki sıralama ve ana sayfa görünürlüğünü belirler.</p>
+                        <ul>
+                            <li>Yaklaşık 30 sayfadan seçim: Program, Speakers, Sponsors, Map, FAQ, Notes, News, QR, Contact vb.</li>
+                            <li>Seçilen başlıkların menü sırası belirlenir</li>
+                            <li>Her başlık için içerik ekranları ayrı ayrı doldurulur</li>
+                            <li>Kontrol panelden sonradan ekleme-çıkarma-düzenleme yapılabilir</li>
+                        </ul>
+                    </div>
+                    <div class="step-panel-media">
+                        <img src="images/qr_hizli.png" alt="Kurulum aşaması">
+                    </div>
+                </article>
+
+                <article class="step-panel" id="step-panel-4" role="tabpanel" aria-labelledby="step-tab-4" data-step-panel="4" hidden>
+                    <div class="step-panel-text">
+                        <p class="step-panel-kicker">Adım 4</p>
+                        <h3>Reklam Görselleri ve Son Önizleme</h3>
+                        <p>Kullanıcı sponsor reklamlarını ekler; web view üzerinden uygulamanın tahmini son görünümünü görür.</p>
+                        <ul>
+                            <li>Sponsor banner ve reklam alanları yüklenir</li>
+                            <li>Mobil önizleme ekranında genel akış kontrol edilir</li>
+                            <li>Her şey hazırsa kullanıcı 5. adıma yönlendirilir</li>
+                        </ul>
+                    </div>
+                    <div class="step-panel-media">
+                        <img src="images/DinamikAnket.png" alt="Test aşaması">
+                    </div>
+                </article>
+
+                <article class="step-panel" id="step-panel-5" role="tabpanel" aria-labelledby="step-tab-5" data-step-panel="5" hidden>
+                    <div class="step-panel-text">
+                        <p class="step-panel-kicker">Adım 5</p>
+                        <h3>Yayına Gönderme ve Analiz</h3>
+                        <p>Sistem eksik içerikleri kontrol eder; uygunluk sağlandığında yayın talebi oluşturulur ve wizard tamamlanır.</p>
+                        <ul>
+                            <li>Menü-içerik tutarlılık kontrolü otomatik yapılır (ör: X menüsü varsa link/hashtag zorunlu)</li>
+                            <li>Yayın sonrası panelde indirme sayıları, platform dağılımı (iOS-Android), kayıt ve bildirim yönetimi izlenir</li>
+                            <li>Anketler, davranış verileri, istek-şikayetler ve demografik kırılımlarla raporlama sağlanır</li>
+                            <li>Başarı ölçütü: kodlama gerektirmeden birkaç gün içinde etkinliğe özel mobil uygulama çıkarmak</li>
+                        </ul>
+                    </div>
+                    <div class="step-panel-media">
+                        <img src="images/DetayliAnalitik.png" alt="Yayınlama aşaması">
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -141,32 +283,32 @@
         </div>
         <div class="features-grid">
             <div class="feature-card fade-in-up delay-1">
-                <div class="feature-visual"><img src="images/etkinlik-yönetimi.jpg" alt="Etkinlik yonetimi"></div>
+                <div class="feature-visual"><img src="images/etkinlik-yönetimi.jpg" alt="Etkinlik yönetimi"></div>
                 <h3>Etkinlik Programı</h3>
                 <p>Detaylı oturum programları, konuşmacı bilgileri ve etkileşimli zaman çizelgesi. Katılımcılar kendi ajandalarını oluşturabilir.</p>
             </div>
             <div class="feature-card fade-in-up delay-2">
-                <div class="feature-visual"><img src="images/qr_hizli.png" alt="Etkinlik yonetimi"></div>
+                <div class="feature-visual"><img src="images/qr_hizli.png" alt="Etkinlik yönetimi"></div>
                 <h3>Akıllı Networking</h3>
                 <p>QR kod ile hızlı kartvizit paylaşımı, AI destekli eşleştirme ve bir-bir görüşme planlama özellikleri.</p>
             </div>
             <div class="feature-card fade-in-up delay-3">
-                <div class="feature-visual"><img src="images/DinamikAnket.png" alt="Etkinlik yonetimi"></div>
+                <div class="feature-visual"><img src="images/DinamikAnket.png" alt="Etkinlik yönetimi"></div>
                 <h3>Dinamik Anketler</h3>
                 <p>İstediğiniz bilgileri toplayın ve anlık bilgi alın.</p>
             </div>
             <div class="feature-card fade-in-up delay-4">
-                <div class="feature-visual"><img src="images/InteraktifHarita.png" alt="Etkinlik yonetimi"></div>
+                <div class="feature-visual"><img src="images/InteraktifHarita.png" alt="Etkinlik yönetimi"></div>
                 <h3>Interaktif Haritalar</h3>
                 <p>Detaylı mekan planları, stand konumları ve navigasyon desteği. Katılımcılar kaybolmaz.</p>
             </div>
             <div class="feature-card fade-in-up delay-5">
-                <div class="feature-visual"><img src="images/SosyalDuvar.png" alt="Etkinlik yonetimi"></div>
+                <div class="feature-visual"><img src="images/SosyalDuvar.png" alt="Etkinlik yönetimi"></div>
                 <h3>Sosyal Duvar</h3>
                 <p>Etkinlik içi sosyal medya entegrasyonu, canlı paylaşımlar ve katılımcı etkileşimi.</p>
             </div>
             <div class="feature-card fade-in-up delay-6">
-                <div class="feature-visual"><img src="images/DetayliAnalitik.png" alt="Etkinlik yonetimi"></div>
+                <div class="feature-visual"><img src="images/DetayliAnalitik.png" alt="Etkinlik yönetimi"></div>
                 <h3>Detaylı Analitik</h3>
                 <p>Katılımcı davranışları, popüler oturumlar ve ROI raporları. Veriye dayalı kararlar alın.</p>
             </div>
@@ -405,6 +547,28 @@
 
             setTrackPosition(0, false);
         }
+
+        // Steps tabs
+        const stepNodes = Array.from(document.querySelectorAll('.step-node'));
+        const stepPanels = Array.from(document.querySelectorAll('.step-panel'));
+
+        const activateStep = (targetId) => {
+            stepNodes.forEach((node) => {
+                const isActive = node.dataset.stepTarget === targetId;
+                node.classList.toggle('active', isActive);
+                node.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+
+            stepPanels.forEach((panel) => {
+                const isActive = panel.dataset.stepPanel === targetId;
+                panel.classList.toggle('active', isActive);
+                panel.hidden = !isActive;
+            });
+        };
+
+        stepNodes.forEach((node) => {
+            node.addEventListener('click', () => activateStep(node.dataset.stepTarget));
+        });
 
         // Intersection Observer for fade-in animations
         const observerOptions = {
