@@ -256,7 +256,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 4.6rem 5% 1.6rem;
+            padding: 0 5% 1.6rem;
             background: linear-gradient(135deg, var(--light) 0%, var(--light) 100%);
             position: relative;
             overflow: hidden;
@@ -1074,7 +1074,20 @@
             }
 
             .hero {
-                padding-bottom: 5rem;
+                min-height: auto;
+                padding: 6.5rem 5% 4rem;
+            }
+
+            .hero-content {
+                justify-items: center;
+            }
+
+            .hero-phone {
+                display: none;
+            }
+
+            .hero-text-2 {
+                text-align: center;
             }
 
             .hero-nav {
@@ -1106,6 +1119,20 @@
 
             .hero-text p {
                 font-size: 1.1rem;
+            }
+
+            .hero-text-2 p {
+                margin: 0 auto 2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .stats {
+                justify-content: center;
+                flex-wrap: wrap;
             }
 
             .steps {
@@ -1200,12 +1227,105 @@
             }
         }
 
+        @media (min-width: 1920px) {
+            .hero {
+                padding-top: 7rem;
+                padding-bottom: 4rem;
+            }
+
+            .hero-carousel,
+            .hero-content {
+                max-width: min(94vw, 1820px);
+            }
+
+            .hero-content {
+                gap: clamp(4rem, 4.6vw, 6.5rem);
+            }
+
+            .hero-text-2 h1,
+            .hero-text h1 {
+                font-size: clamp(4rem, 4.2vw, 5.4rem);
+                line-height: 1.06;
+            }
+
+            .hero-text-2 p {
+                font-size: clamp(1.2rem, 1vw, 1.4rem);
+                max-width: 700px;
+            }
+
+            .hero-phone {
+                height: clamp(500px, 80vh, 960px);
+                max-height: calc(100vh - 6rem);
+            }
+
+            .phone-mockup {
+                width: min(100%, 600px);
+            }
+
+            .steps {
+                padding-top: 1rem;
+                padding-bottom: 2.2rem;
+            }
+
+            .steps-inner {
+                max-width: 1460px;
+            }
+
+            .steps .section-header h2 {
+                font-size: clamp(2.9rem, 2.2vw, 3.5rem);
+            }
+
+            .steps .section-header p {
+                font-size: clamp(1.1rem, 1vw, 1.3rem);
+            }
+
+            .steps-flow {
+                max-width: 1100px;
+                margin-top: 1.2rem;
+                margin-bottom: 1.6rem;
+            }
+
+            .step-node {
+                width: 82px;
+                height: 82px;
+                font-size: 1.9rem;
+            }
+
+            .step-connector {
+                max-width: 190px;
+                height: 12px;
+                background-size: 14px 12px;
+            }
+
+            .steps-panels {
+                max-width: 1260px;
+            }
+
+            .step-panel {
+                padding: 1.8rem;
+                gap: 1.9rem;
+            }
+
+            .step-panel-text h3 {
+                font-size: 2rem;
+            }
+
+            .step-panel-text p,
+            .step-panel-text li {
+                font-size: 1.02rem;
+            }
+
+            .step-panel-media {
+                min-height: 300px;
+            }
+        }
+
         /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
-            }
+            }   
             to {
                 opacity: 1;
                 transform: translateY(0);
