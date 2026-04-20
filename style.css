@@ -1673,8 +1673,9 @@
         }
 
         .page-mobilapp .hero-text p,
+        .page-mobilapp .hero-text-2 p,
         .page-mobilapp .stat-label {
-            color: rgba(255, 255, 255, 0.78);
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .page-mobilapp .stats {
@@ -1699,6 +1700,12 @@
 
         .page-mobilapp .mobile-features {
             background: linear-gradient(180deg, #030816, #090f20);
+        }
+
+        .page-mobilapp .mobile-features .section-header p,
+        .page-mobilapp .mobile-features .feature-list li,
+        .page-mobilapp .mobile-features .screen-card h4 {
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .page-mobilapp .mobile-features .section-tag {
@@ -2028,11 +2035,19 @@
             color: #fff;
         }
 
-        .page-ozellikler .hero-text p,
-        .page-avantajlar .hero-text p,
-        .page-demoiste .hero-text p,
-        .page-iletisim .hero-text p {
-            color: rgba(255, 255, 255, 0.78);
+        .page-ozellikler .hero-text-2 p,
+        .page-avantajlar .hero-text-2 p,
+        .page-demoiste .hero-text-2 p,
+        .page-iletisim .hero-text-2 p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .page-mobilapp .stat-label,
+        .page-ozellikler .stat-label,
+        .page-avantajlar .stat-label,
+        .page-demoiste .stat-label,
+        .page-iletisim .stat-label {
+            color: rgba(255, 255, 255, 0.86);
         }
 
         .page-ozellikler .btn-primary,
@@ -2115,6 +2130,15 @@
         .page-iletisim .field-group input,
         .page-iletisim .field-group textarea {
             color: rgba(255, 255, 255, 0.85);
+        }
+
+        .page-ozellikler .feature-card h3,
+        .page-avantajlar .benefit-card h3,
+        .page-demoiste .info-card h3,
+        .page-demoiste .info-list li,
+        .page-iletisim .contact-card p,
+        .page-iletisim .contact-list li {
+            color: rgba(255, 255, 255, 0.94);
         }
 
         .page-demoiste .field-group input,
