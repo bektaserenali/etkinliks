@@ -13,8 +13,13 @@
 <body>
     <!-- Navigation -->
     <nav class="nav">
-        <div class="logo"><img style="max-height: 50px;" src="images/logo_uzun.png"></div>
-        <ul class="nav-links">
+        <div class="logo"><img style="max-height: 40px;" src="images/logo_uzun.png"></div>
+        <button class="mobile-menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mainNavLinks">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="mainNavLinks">
             <li><a href="index.html">Ana Sayfa</a></li>
             <li><a href="ozellikler.html">Özellikler</a></li>
             <li><a href="mobilapp.html">Mobil App</a></li>
@@ -474,15 +479,69 @@
             });
         });
 
-        // Navbar scroll effect
+        // Navbar scroll effect (hide on scroll down, show on scroll up)
+        let lastScrollY = window.scrollY;
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('.nav');
-            if (window.scrollY > 50) {
+            if (!nav) return;
+
+            const currentScrollY = window.scrollY;
+            const isMenuOpen = nav.classList.contains('mobile-menu-open');
+
+            if (currentScrollY > 50) {
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
+                nav.classList.remove('nav-hidden');
             }
-        });
+
+            if (!isMenuOpen && currentScrollY > 120) {
+                if (currentScrollY > lastScrollY + 4) {
+                    nav.classList.add('nav-hidden');
+                } else if (currentScrollY < lastScrollY - 4) {
+                    nav.classList.remove('nav-hidden');
+                }
+            } else {
+                nav.classList.remove('nav-hidden');
+            }
+
+            lastScrollY = currentScrollY;
+        }, { passive: true });
+
+        // Mobile navigation
+        const navElement = document.querySelector('.nav');
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinksList = document.getElementById('mainNavLinks');
+
+        if (navElement && mobileMenuToggle && navLinksList) {
+            const closeMobileMenu = () => {
+                navElement.classList.remove('mobile-menu-open');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            };
+
+            mobileMenuToggle.addEventListener('click', () => {
+                const isOpen = navElement.classList.toggle('mobile-menu-open');
+                mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            navLinksList.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', () => {
+                    closeMobileMenu();
+                });
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!navElement.contains(event.target)) {
+                    closeMobileMenu();
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    closeMobileMenu();
+                }
+            });
+        }
 
         // Hero carousel
         const heroCarousel = document.getElementById('heroCarousel');
@@ -492,6 +551,7 @@
             const heroDots = Array.from(heroCarousel.querySelectorAll('.hero-dot'));
             const prevBtn = heroCarousel.querySelector('.hero-prev');
             const nextBtn = heroCarousel.querySelector('.hero-next');
+            const isMobileCarousel = () => window.matchMedia('(max-width: 768px)').matches;
 
             // Clone last and first slides for seamless looping in both directions
             const lastClone = heroSlides[heroSlides.length - 1].cloneNode(true);
@@ -505,10 +565,21 @@
             const slideCount = heroSlides.length;
             let currentSlide = 1; // Start at 1 because of prepended clone
             let isTransitioning = false;
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let touchDeltaX = 0;
+            let touchDragging = false;
+            let touchSwiping = false;
 
-            const setTrackPosition = (index, withTransition = true) => {
+            const getSlideWidth = () => {
+                const slide = heroTrack.querySelector('.hero-slide');
+                return slide ? slide.getBoundingClientRect().width : heroCarousel.clientWidth;
+            };
+
+            const setTrackPosition = (index, withTransition = true, dragOffset = 0) => {
+                const slideWidth = getSlideWidth();
                 heroTrack.style.transition = withTransition ? 'transform 0.55s ease' : 'none';
-                heroTrack.style.transform = `translateX(-${index * 100}%)`;
+                heroTrack.style.transform = `translateX(${(-index * slideWidth) + dragOffset}px)`;
             };
 
             const updateDots = (index) => {
@@ -540,6 +611,68 @@
                 isTransitioning = false;
             });
 
+            heroCarousel.addEventListener('touchstart', (event) => {
+                if (!isMobileCarousel() || event.touches.length !== 1 || isTransitioning) {
+                    return;
+                }
+
+                touchDragging = true;
+                touchSwiping = false;
+                touchStartX = event.touches[0].clientX;
+                touchStartY = event.touches[0].clientY;
+                touchDeltaX = 0;
+                heroTrack.style.transition = 'none';
+            }, { passive: true });
+
+            heroCarousel.addEventListener('touchmove', (event) => {
+                if (!touchDragging || event.touches.length !== 1) {
+                    return;
+                }
+
+                const currentX = event.touches[0].clientX;
+                const currentY = event.touches[0].clientY;
+                const deltaX = currentX - touchStartX;
+                const deltaY = currentY - touchStartY;
+
+                if (!touchSwiping) {
+                    if (Math.abs(deltaX) < 8 || Math.abs(deltaX) <= Math.abs(deltaY)) {
+                        return;
+                    }
+
+                    touchSwiping = true;
+                }
+
+                event.preventDefault();
+                touchDeltaX = deltaX;
+                setTrackPosition(currentSlide, false, touchDeltaX);
+            }, { passive: false });
+
+            const finishTouchSwipe = () => {
+                if (!touchDragging) {
+                    return;
+                }
+
+                const slideWidth = getSlideWidth();
+                const swipeThreshold = Math.min(90, slideWidth * 0.18);
+
+                if (touchSwiping && Math.abs(touchDeltaX) > swipeThreshold) {
+                    if (touchDeltaX < 0) {
+                        goToSlide(currentSlide + 1);
+                    } else {
+                        goToSlide(currentSlide - 1);
+                    }
+                } else {
+                    setTrackPosition(currentSlide, true);
+                }
+
+                touchDragging = false;
+                touchSwiping = false;
+                touchDeltaX = 0;
+            };
+
+            heroCarousel.addEventListener('touchend', finishTouchSwipe);
+            heroCarousel.addEventListener('touchcancel', finishTouchSwipe);
+
             prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
             nextBtn.addEventListener('click', () => {
                 if (currentSlide === slideCount) {
@@ -554,6 +687,10 @@
             });
 
             setTrackPosition(1, false);
+
+            window.addEventListener('resize', () => {
+                setTrackPosition(currentSlide, false);
+            });
         }
 
         // Steps tabs

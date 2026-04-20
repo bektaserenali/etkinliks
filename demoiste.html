@@ -13,7 +13,12 @@
 <body class="page-demoiste">
 	<nav class="nav">
 		<div class="logo"><a href="index.html"><img style="max-height: 50px;" src="images/logo_uzun.png" alt="EventsApp Logo"></a></div>
-		<ul class="nav-links">
+		<button class="mobile-menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mainNavLinks">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<ul class="nav-links" id="mainNavLinks">
 			<li><a href="index.html">Ana Sayfa</a></li>
 			<li><a href="ozellikler.html">Özellikler</a></li>
 			<li><a href="mobilapp.html">Mobil App</a></li>
@@ -157,14 +162,67 @@
 			});
 		});
 
+		const navElement = document.querySelector('.nav');
+		const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+		const navLinksList = document.getElementById('mainNavLinks');
+
+		if (navElement && mobileMenuToggle && navLinksList) {
+			const closeMobileMenu = () => {
+				navElement.classList.remove('mobile-menu-open');
+				mobileMenuToggle.setAttribute('aria-expanded', 'false');
+			};
+
+			mobileMenuToggle.addEventListener('click', () => {
+				const isOpen = navElement.classList.toggle('mobile-menu-open');
+				mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+			});
+
+			navLinksList.querySelectorAll('a').forEach((link) => {
+				link.addEventListener('click', () => {
+					closeMobileMenu();
+				});
+			});
+
+			document.addEventListener('click', (event) => {
+				if (!navElement.contains(event.target)) {
+					closeMobileMenu();
+				}
+			});
+
+			window.addEventListener('resize', () => {
+				if (window.innerWidth > 768) {
+					closeMobileMenu();
+				}
+			});
+		}
+
+		let lastScrollY = window.scrollY;
 		window.addEventListener('scroll', () => {
 			const nav = document.querySelector('.nav');
-			if (window.scrollY > 50) {
+			if (!nav) return;
+
+			const currentScrollY = window.scrollY;
+			const isMenuOpen = nav.classList.contains('mobile-menu-open');
+
+			if (currentScrollY > 50) {
 				nav.classList.add('scrolled');
 			} else {
 				nav.classList.remove('scrolled');
+				nav.classList.remove('nav-hidden');
 			}
-		});
+
+			if (!isMenuOpen && currentScrollY > 120) {
+				if (currentScrollY > lastScrollY + 4) {
+					nav.classList.add('nav-hidden');
+				} else if (currentScrollY < lastScrollY - 4) {
+					nav.classList.remove('nav-hidden');
+				}
+			} else {
+				nav.classList.remove('nav-hidden');
+			}
+
+			lastScrollY = currentScrollY;
+		}, { passive: true });
 	</script>
 </body>
 </html>
