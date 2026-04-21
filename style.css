@@ -834,16 +834,34 @@
             background: rgba(255, 255, 255, 0.08);
         }
 
+        .mobile-screens .screen-card > img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
         .screen-preview {
             aspect-ratio: 9/16;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-red));
+            background: transparent;
             border-radius: 15px;
+            overflow: hidden;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 3rem;
             opacity: 0.9;
+        }
+
+        .screen-preview img {
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            max-height: none;
+            object-fit: cover;
+            display: block;
         }
 
         .screen-card h4 {
