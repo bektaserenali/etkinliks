@@ -60,8 +60,11 @@
 					<li>Soru-cevap ve teknik gereksinim değerlendirmesi</li>
 				</ul>
 			</div>
-			<form class="demo-form">
+			<form class="demo-form" id="demoForm" action="https://formsubmit.co/ajax/info@etkinliks.app" method="POST">
 				<h3>Demo Talep Formu</h3>
+				<input type="hidden" name="_subject" value="EventsApp Demo Talebi">
+				<input type="hidden" name="_captcha" value="false">
+				<input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none;">
 				<div class="form-row">
 					<div class="field-group">
 						<label for="name">Ad Soyad</label>
@@ -109,7 +112,8 @@
 					<label for="message">Kısa Not</label>
 					<textarea id="message" name="message" rows="5" placeholder="Etkinlik tarihi, beklentileriniz ve ihtiyaç duyduğunuz modüller..."></textarea>
 				</div>
-				<button type="submit" class="btn-primary">Demo Talebini Gönder</button>
+				<button type="submit" class="btn-primary" id="demoSubmitBtn">Demo Talebini Gönder</button>
+				<p class="form-feedback" id="demoFeedback" role="status" aria-live="polite"></p>
 			</form>
 		</div>
 	</section>
@@ -224,6 +228,52 @@
 
 			lastScrollY = currentScrollY;
 		}, { passive: true });
+
+		const demoForm = document.getElementById('demoForm');
+		const demoSubmitBtn = document.getElementById('demoSubmitBtn');
+		const demoFeedback = document.getElementById('demoFeedback');
+
+		if (demoForm && demoSubmitBtn && demoFeedback) {
+			const setDemoFeedback = (message, type) => {
+				demoFeedback.textContent = message;
+				demoFeedback.classList.remove('is-success', 'is-error');
+				demoFeedback.classList.add('is-visible', type === 'success' ? 'is-success' : 'is-error');
+			};
+
+			demoForm.addEventListener('submit', async (event) => {
+				event.preventDefault();
+
+				demoSubmitBtn.disabled = true;
+				demoSubmitBtn.classList.add('is-loading');
+				demoSubmitBtn.textContent = 'Gonderiliyor...';
+				demoFeedback.classList.remove('is-visible', 'is-success', 'is-error');
+				demoFeedback.textContent = '';
+
+				try {
+					const formData = new FormData(demoForm);
+					const response = await fetch(demoForm.action, {
+						method: 'POST',
+						body: formData,
+						headers: {
+							'Accept': 'application/json'
+						}
+					});
+
+					if (!response.ok) {
+						throw new Error('Form gonderimi basarisiz.');
+					}
+
+					demoForm.reset();
+					setDemoFeedback('Demo talebiniz basariyla gonderildi. Ekibimiz en kisa surede sizinle iletisime gececek.', 'success');
+				} catch (error) {
+					setDemoFeedback('Demo talebi gonderilirken bir sorun olustu. Lutfen tekrar deneyin veya info@etkinliks.app adresine e-posta gonderin.', 'error');
+				} finally {
+					demoSubmitBtn.disabled = false;
+					demoSubmitBtn.classList.remove('is-loading');
+					demoSubmitBtn.textContent = 'Demo Talebini Gonder';
+				}
+			});
+		}
 	</script>
 </body>
 </html>

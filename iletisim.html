@@ -59,10 +59,24 @@
 					<li>E-posta: info@etkinliks.app</li>
 					<li>Destek: support@etkinliks.app</li>
 				</ul>
-				<div class="map-box">Konum Önizleme Alanı</div>
+				<div class="map-box">
+					<iframe
+						title="EventsApp Ofis Konumu"
+						src="https://www.google.com/maps?q=%C4%B0stanbul%20%C3%9Cniversitesi%20Avc%C4%B1lar%20Kamp%C3%BCs%C3%BC%2C%20Teknokent%20K%3A3%20No%3A304&output=embed"
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+						allowfullscreen>
+					</iframe>
+				</div>
+				<div class="map-actions">
+					<a class="map-route-btn" href="https://www.google.com/maps/search/?api=1&query=%C4%B0stanbul%20%C3%9Cniversitesi%20Avc%C4%B1lar%20Kamp%C3%BCs%C3%BC%2C%20Teknokent%20K%3A3%20No%3A304" target="_blank" rel="noopener noreferrer">Yol Tarifi Al</a>
+				</div>
 			</div>
-			<form class="contact-form">
+			<form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/bektaserenali@outlook.com" method="POST">
 				<h3>İletişim Formu</h3>
+				<input type="hidden" name="_subject" value="EventsApp Iletisim Formu">
+				<input type="hidden" name="_captcha" value="false">
+				<input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none;">
 				<div class="field-group">
 					<label for="fullName">Ad Soyad</label>
 					<input id="fullName" name="fullName" type="text" placeholder="Ad Soyad" required>
@@ -79,7 +93,8 @@
 					<label for="message">Mesaj</label>
 					<textarea id="message" name="message" rows="6" placeholder="Talebinizi detaylı olarak yazabilirsiniz..." required></textarea>
 				</div>
-				<button type="submit" class="btn-primary" style="width: 100%;">Mesajı Gönder</button>
+				<button type="submit" class="btn-primary" id="contactSubmitBtn" style="width: 100%;">Mesajı Gönder</button>
+				<p class="form-feedback" id="contactFeedback" role="status" aria-live="polite"></p>
 			</form>
 		</div>
 	</section>
@@ -194,6 +209,52 @@
 
 			lastScrollY = currentScrollY;
 		}, { passive: true });
+
+		const contactForm = document.getElementById('contactForm');
+		const contactSubmitBtn = document.getElementById('contactSubmitBtn');
+		const contactFeedback = document.getElementById('contactFeedback');
+
+		if (contactForm && contactSubmitBtn && contactFeedback) {
+			const setFeedback = (message, type) => {
+				contactFeedback.textContent = message;
+				contactFeedback.classList.remove('is-success', 'is-error');
+				contactFeedback.classList.add('is-visible', type === 'success' ? 'is-success' : 'is-error');
+			};
+
+			contactForm.addEventListener('submit', async (event) => {
+				event.preventDefault();
+
+				contactSubmitBtn.disabled = true;
+				contactSubmitBtn.classList.add('is-loading');
+				contactSubmitBtn.textContent = 'Gonderiliyor...';
+				contactFeedback.classList.remove('is-visible', 'is-success', 'is-error');
+				contactFeedback.textContent = '';
+
+				try {
+					const formData = new FormData(contactForm);
+					const response = await fetch(contactForm.action, {
+						method: 'POST',
+						body: formData,
+						headers: {
+							'Accept': 'application/json'
+						}
+					});
+
+					if (!response.ok) {
+						throw new Error('Form gonderimi basarisiz.');
+					}
+
+					contactForm.reset();
+					setFeedback('Mesajiniz basariyla gonderildi. En kisa surede size donus yapacagiz.', 'success');
+				} catch (error) {
+					setFeedback('Mesaj gonderilirken bir sorun olustu. Lutfen tekrar deneyin veya info@etkinliks.app adresine e-posta gonderin.', 'error');
+				} finally {
+					contactSubmitBtn.disabled = false;
+					contactSubmitBtn.classList.remove('is-loading');
+					contactSubmitBtn.textContent = 'Mesaji Gonder';
+				}
+			});
+		}
 	</script>
 </body>
 </html>

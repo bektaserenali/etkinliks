@@ -388,7 +388,7 @@
         }
 
         .step-node.active {
-            background: linear-gradient(135deg, #207acd 0%, #ed1f24 100%);
+            background: var(--primary-blue);
             border-color: transparent;
             color: #ffffff;
             box-shadow: 0 14px 34px rgba(32, 122, 205, 0.32);
@@ -1922,6 +1922,38 @@
             background: linear-gradient(120deg, #ed1f24, #ff7b36);
         }
 
+        .page-demoiste .demo-form .btn-primary.is-loading {
+            opacity: 0.72;
+            pointer-events: none;
+            filter: saturate(0.9);
+        }
+
+        .page-demoiste .form-feedback {
+            display: none;
+            margin-top: 0.85rem;
+            border-radius: 12px;
+            padding: 0.75rem 0.9rem;
+            font-size: 0.92rem;
+            font-weight: 600;
+            line-height: 1.45;
+        }
+
+        .page-demoiste .form-feedback.is-visible {
+            display: block;
+        }
+
+        .page-demoiste .form-feedback.is-success {
+            color: #0b5137;
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.45);
+        }
+
+        .page-demoiste .form-feedback.is-error {
+            color: #7f1d1d;
+            background: rgba(239, 68, 68, 0.16);
+            border: 1px solid rgba(239, 68, 68, 0.42);
+        }
+
         @media (max-width: 900px) {
             .page-demoiste .form-grid {
                 grid-template-columns: 1fr;
@@ -2019,6 +2051,38 @@
         .page-iletisim .field-group input:focus,
         .page-iletisim .field-group textarea:focus {
             border-color: #0f8a8b;
+        }
+
+        .page-iletisim .contact-form .btn-primary.is-loading {
+            opacity: 0.72;
+            pointer-events: none;
+            filter: saturate(0.9);
+        }
+
+        .page-iletisim .form-feedback {
+            display: none;
+            margin-top: 0.85rem;
+            border-radius: 12px;
+            padding: 0.75rem 0.9rem;
+            font-size: 0.92rem;
+            font-weight: 600;
+            line-height: 1.45;
+        }
+
+        .page-iletisim .form-feedback.is-visible {
+            display: block;
+        }
+
+        .page-iletisim .form-feedback.is-success {
+            color: #0b5137;
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.45);
+        }
+
+        .page-iletisim .form-feedback.is-error {
+            color: #7f1d1d;
+            background: rgba(239, 68, 68, 0.16);
+            border: 1px solid rgba(239, 68, 68, 0.42);
         }
 
         .page-iletisim .map-box {
@@ -2192,4 +2256,37 @@
             background:
                 repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.2) 1px, transparent 1px, transparent 18px),
                 linear-gradient(135deg, rgba(255, 159, 50, 0.35), rgba(255, 106, 61, 0.28));
+            padding: 0;
+            overflow: hidden;
+            display: block;
+        }
+
+        .page-iletisim .map-box iframe {
+            width: 100%;
+            height: 260px;
+            border: 0;
+            display: block;
+        }
+
+        .page-iletisim .map-actions {
+            margin-top: 0.85rem;
+        }
+
+        .page-iletisim .map-route-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #0a0e1a;
+            background: linear-gradient(120deg, #ffb562, #ff7f4d);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .page-iletisim .map-route-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(255, 106, 61, 0.28);
         }
